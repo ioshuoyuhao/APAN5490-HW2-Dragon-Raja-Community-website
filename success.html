@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission Confirmation | Night Watcher Forum</title>
+    <meta name="description" content="Congratulations! You have been accepted to Cassell College. Welcome to the Night Watcher Forum community">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Special animations for success page */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 60%, rgba(212, 175, 55, 0.05) 0%, transparent 50%);
+            animation: sparkleMove 8s ease-in-out infinite;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        @keyframes sparkleMove {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.1); }
+        }
+
+        .parchment {
+            position: relative;
+            background: linear-gradient(135deg, #f8f8f2, #f0f0e8);
+            border: 3px solid var(--gold);
+            border-radius: 15px;
+            padding: 3rem;
+            max-width: 700px;
+            margin: 2rem auto;
+            box-shadow: 0 10px 30px var(--shadow-dark);
+            animation: revealParchment 1.5s ease-out;
+        }
+
+        .parchment::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, var(--gold), #f4d03f, var(--gold));
+            border-radius: 15px;
+            z-index: -1;
+            animation: glowSeal 2s ease-in-out infinite alternate;
+        }
+
+        .emblem {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 2rem;
+            background: linear-gradient(135deg, var(--gold), #f4d03f);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            animation: glowSeal 2s ease-in-out infinite alternate;
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+        }
+
+        .admission-title {
+            text-align: center;
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            color: var(--emerald);
+            margin-bottom: 1rem;
+            animation: shimmer 3s ease-in-out infinite;
+            background: linear-gradient(90deg, var(--emerald), var(--gold), var(--emerald));
+            background-size: 200% 100%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .quote {
+            text-align: center;
+            font-style: italic;
+            font-size: 1.2rem;
+            color: var(--emerald);
+            margin: 2rem 0;
+            padding: 1rem;
+            border-left: 4px solid var(--gold);
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 8px;
+        }
+
+        .confirmation-text {
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--emerald);
+            margin-bottom: 2rem;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .success-hero {
+            background: linear-gradient(135deg, var(--emerald), #2a5a4f);
+            color: var(--parchment);
+            padding: 3rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .success-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="stars" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.3)"/></pattern></defs><rect width="100" height="100" fill="url(%23stars)"/></svg>');
+            animation: sparkleMove 6s ease-in-out infinite;
+        }
+
+        .success-hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .celebration {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            animation: glowSeal 1.5s ease-in-out infinite alternate;
+        }
+
+        @media (max-width: 768px) {
+            .parchment {
+                margin: 1rem;
+                padding: 2rem;
+            }
+            
+            .admission-title {
+                font-size: 2rem;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .action-buttons .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    守夜人论坛
+                </div>
+                <nav>
+                    <ul class="nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="forum.html">Forum</a></li>
+                        <li><a href="fanworks.html">Fan Works</a></li>
+                        <li><a href="contact.html">Departments</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <span class="notification-icon" aria-label="Notifications">🔔</span>
+                    <a href="#" class="btn btn-outline">Login</a>
+                    <a href="questionnaire.html" class="btn btn-primary">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Success Hero Section -->
+    <section class="success-hero">
+        <div class="container">
+            <div class="success-hero-content">
+                <div class="celebration">🎉</div>
+                <h1>Congratulations!</h1>
+                <p style="font-size: 1.2rem; margin-top: 1rem;">Your application has been accepted</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <section class="section">
+                <!-- Parchment Admission Notice -->
+                <div class="parchment">
+                    <div class="emblem">
+                        🐉
+                    </div>
+                    
+                    <h1 class="admission-title">Cassell College Admission Notice</h1>
+                    
+                    <div class="quote">
+                        "In every ordinary heart lies the courage of dragons."
+                    </div>
+                    
+                    <div class="confirmation-text">
+                        <p><strong>Dear Applicant,</strong></p>
+                        <p>We are pleased to inform you that your First Blood Lineage Investigation has been successfully completed and reviewed by our admissions committee.</p>
+                        <p>Based on your responses, we have identified significant dragon blood potential within you. Your character, values, and aspirations align perfectly with the Cassell College mission.</p>
+                        <p><strong>You have been accepted to Cassell College!</strong></p>
+                        <p>You will receive your official admission notice via email within the next 24-48 hours, along with detailed information about your dragon blood lineage assessment and next steps.</p>
+                        <p>Welcome to the Night Watcher Forum community. Your journey as a Cassell College agent begins now.</p>
+                        <p style="margin-top: 2rem; font-weight: 500;">— The Cassell College Admissions Committee</p>
+                    </div>
+                    
+                    <div class="action-buttons">
+                        <a href="index.html" class="btn btn-primary">Return to Homepage</a>
+                        <a href="forum.html" class="btn btn-outline">Visit Forum</a>
+                    </div>
+                </div>
+                
+                <!-- Next Steps Section -->
+                <div class="section" style="margin-top: 3rem;">
+                    <div class="card">
+                        <h2>What's Next?</h2>
+                        <div class="grid-2" style="gap: 2rem; margin-top: 2rem;">
+                            <div>
+                                <h4>🎓 Complete Your Profile</h4>
+                                <p>Set up your agent profile and choose your department affiliations. You can join multiple departments based on your interests.</p>
+                                
+                                <h4>📚 Explore the Forum</h4>
+                                <p>Dive into discussions, share your thoughts, and connect with fellow agents in our role-play community.</p>
+                            </div>
+                            
+                            <div>
+                                <h4>🎨 Share Your Creativity</h4>
+                                <p>Upload your fan works, stories, and artwork to our gallery. Show off your creative talents to the community.</p>
+                                
+                                <h4>🤝 Join Department Activities</h4>
+                                <p>Participate in department-specific events, training sessions, and collaborative projects.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Community Stats -->
+                <div class="section" style="margin-top: 3rem;">
+                    <div class="card" style="background: linear-gradient(135deg, #f8f8f2, #f0f0e8);">
+                        <h2 style="text-align: center; margin-bottom: 2rem;">Welcome to Our Community</h2>
+                        <div class="grid-3" style="text-align: center;">
+                            <div>
+                                <h3 style="color: var(--gold); font-size: 2rem; margin-bottom: 0.5rem;">1,247</h3>
+                                <p>Active Agents</p>
+                            </div>
+                            <div>
+                                <h3 style="color: var(--gold); font-size: 2rem; margin-bottom: 0.5rem;">89</h3>
+                                <p>Departments</p>
+                            </div>
+                            <div>
+                                <h3 style="color: var(--gold); font-size: 2rem; margin-bottom: 0.5rem;">2,156</h3>
+                                <p>Fan Works</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Sponsors</h4>
+                    <p>Dragon Blood Research Foundation</p>
+                    <p>Cassell Academy Alumni Association</p>
+                    <p>Night Watcher Equipment Co.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Community</h4>
+                    <p><a href="forum.html">Discussion Forums</a></p>
+                    <p><a href="fanworks.html">Fan Works Gallery</a></p>
+                    <p><a href="contact.html">Contact Us</a></p>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <p><a href="questionnaire.html">Lineage Investigation</a></p>
+                    <p><a href="#">Department Guides</a></p>
+                    <p><a href="#">Academic Papers</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Night Watcher Forum. All rights reserved.</p>
+                <p>Inspired by Dragon Raja universe. This is a fan community project.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

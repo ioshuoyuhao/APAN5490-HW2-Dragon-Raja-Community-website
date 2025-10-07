@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Night Watcher Forum</title>
+    <meta name="description" content="Get in touch with the Night Watcher Forum community. Contact information and inquiry form">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    守夜人论坛
+                </div>
+                <nav>
+                    <ul class="nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="forum.html">Forum</a></li>
+                        <li><a href="fanworks.html">Fan Works</a></li>
+                        <li><a href="contact.html" class="active">Departments</a></li>
+                        <li><a href="contact.html" class="active">Contact Us</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <span class="notification-icon" aria-label="Notifications">🔔</span>
+                    <a href="#" class="btn btn-outline">Login</a>
+                    <a href="questionnaire.html" class="btn btn-primary">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" style="padding: 2rem 0;">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Contact Us</h1>
+                <p>Reach out anytime - we're here to help with your Dragon Raja community experience</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <section class="section">
+                <div class="grid-2" style="gap: 3rem;">
+                    <!-- Contact Information -->
+                    <div class="card">
+                        <h2>Get in Touch</h2>
+                        <p style="margin-bottom: 2rem;">We'd love to hear from you! Whether you have questions about the community, need technical support, or want to share feedback, our team is here to help.</p>
+                        
+                        <div class="contact-info">
+                            <div class="flex-row" style="align-items: center; margin-bottom: 1.5rem;">
+                                <span style="font-size: 1.5rem; margin-right: 1rem;">📧</span>
+                                <div>
+                                    <h4>Email</h4>
+                                    <p>contact@dragonraja-community.example</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex-row" style="align-items: center; margin-bottom: 1.5rem;">
+                                <span style="font-size: 1.5rem; margin-right: 1rem;">📞</span>
+                                <div>
+                                    <h4>Phone</h4>
+                                    <p>+1 (555) 012-3456</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex-row" style="align-items: center; margin-bottom: 1.5rem;">
+                                <span style="font-size: 1.5rem; margin-right: 1rem;">📍</span>
+                                <div>
+                                    <h4>Address</h4>
+                                    <p>Cassell House, 12 Dragon Lane<br>Fantasia City, CA 90210</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex-row" style="align-items: center; margin-bottom: 1.5rem;">
+                                <span style="font-size: 1.5rem; margin-right: 1rem;">🕒</span>
+                                <div>
+                                    <h4>Hours</h4>
+                                    <p>Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 10:00 AM - 4:00 PM<br>Sunday: Closed</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="divider"></div>
+                        
+                        <h3>Follow Us</h3>
+                        <div class="flex-row" style="gap: 1rem; margin-top: 1rem;">
+                            <a href="#" class="btn btn-outline" style="display: flex; align-items: center; gap: 0.5rem;">
+                                📷 Instagram
+                            </a>
+                            <a href="#" class="btn btn-outline" style="display: flex; align-items: center; gap: 0.5rem;">
+                                📺 Bilibili
+                            </a>
+                            <a href="#" class="btn btn-outline" style="display: flex; align-items: center; gap: 0.5rem;">
+                                📱 Weibo
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="card">
+                        <h2>Send us a Message</h2>
+                        <p style="margin-bottom: 2rem;">Fill out the form below and we'll get back to you as soon as possible.</p>
+                        
+                        <form class="contact-form">
+                            <div class="form-group">
+                                <label for="name" class="form-label">Full Name *</label>
+                                <input type="text" id="name" name="name" class="form-input" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email Address *</label>
+                                <input type="email" id="email" name="email" class="form-input" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject" class="form-label">Subject *</label>
+                                <input type="text" id="subject" name="subject" class="form-input" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="topic" class="form-label">Topic</label>
+                                <select id="topic" name="topic" class="form-select">
+                                    <option value="">Select a topic</option>
+                                    <option value="general">General Inquiry</option>
+                                    <option value="technical">Technical Support</option>
+                                    <option value="community">Community Guidelines</option>
+                                    <option value="fanworks">Fan Works Submission</option>
+                                    <option value="forum">Forum Issues</option>
+                                    <option value="account">Account Problems</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message" class="form-label">Message *</label>
+                                <textarea id="message" name="message" class="form-textarea" rows="6" placeholder="Tell us how we can help you..." required></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <div class="flex-row" style="align-items: center; gap: 0.5rem;">
+                                    <input type="checkbox" id="newsletter" name="newsletter">
+                                    <label for="newsletter">Subscribe to our newsletter for community updates</label>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem; font-size: 1.1rem;">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- Map Placeholder -->
+                <div class="section" style="margin-top: 3rem;">
+                    <div class="card">
+                        <h2>Find Us</h2>
+                        <div style="background: #f0f0f0; height: 300px; border-radius: var(--border-radius); display: flex; align-items: center; justify-content: center; color: #666; font-size: 1.1rem;">
+                            🗺️ Interactive Map Placeholder<br>
+                            <small>Cassell House, 12 Dragon Lane, Fantasia City</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ Section -->
+                <div class="section" style="margin-top: 3rem;">
+                    <div class="card">
+                        <h2>Frequently Asked Questions</h2>
+                        <div class="grid-2" style="gap: 2rem; margin-top: 2rem;">
+                            <div>
+                                <h4>How do I join the community?</h4>
+                                <p>Simply click the "Sign Up" button in the header and complete the registration process. You can also take our First Blood Lineage Investigation to get started with the role-play experience.</p>
+                                
+                                <h4>Can I submit my fan works?</h4>
+                                <p>Absolutely! We encourage community members to share their creative works. Visit our Fan Works Gallery to upload your art, stories, or other creative content.</p>
+                                
+                                <h4>How do the departments work?</h4>
+                                <p>Departments are role-play groups based on the Cassell College structure. You can join multiple departments and participate in their specific discussions and activities.</p>
+                            </div>
+                            
+                            <div>
+                                <h4>Is this site official?</h4>
+                                <p>This is a fan community project inspired by the Dragon Raja universe. We are not affiliated with the original creators but aim to provide a respectful and engaging fan experience.</p>
+                                
+                                <h4>How can I report inappropriate content?</h4>
+                                <p>If you encounter any content that violates our community guidelines, please contact us immediately through this form or report it directly in the forum.</p>
+                                
+                                <h4>Do you have mobile apps?</h4>
+                                <p>Currently, we're a web-based community. The site is fully responsive and works great on mobile devices. We're considering mobile app development based on community feedback.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Sponsors</h4>
+                    <p>Dragon Blood Research Foundation</p>
+                    <p>Cassell Academy Alumni Association</p>
+                    <p>Night Watcher Equipment Co.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Community</h4>
+                    <p><a href="forum.html">Discussion Forums</a></p>
+                    <p><a href="fanworks.html">Fan Works Gallery</a></p>
+                    <p><a href="contact.html">Contact Us</a></p>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <p><a href="questionnaire.html">Lineage Investigation</a></p>
+                    <p><a href="#">Department Guides</a></p>
+                    <p><a href="#">Academic Papers</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Night Watcher Forum. All rights reserved.</p>
+                <p>Inspired by Dragon Raja universe. This is a fan community project.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

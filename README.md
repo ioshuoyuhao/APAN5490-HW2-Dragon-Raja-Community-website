@@ -118,36 +118,6 @@ nightwatcher-forum/
 5. **Explore** all features and responsive design
 
 
-## 🎭 Key Features
-
-### Interactive Elements
-- **Search Functionality** - Redirects to forum with query parameters
-- **Form Handling** - Questionnaire submission with validation
-- **Filter Controls** - Sort and filter content dynamically
-- **Mobile Menu** - Responsive navigation for mobile devices
-
-### Animations & Effects
-- **Parchment Reveal** - Smooth fade-in animation for success page
-- **Glowing Seal** - Pulsing border effect for admission notice
-- **Shimmer Text** - Gold streak animation on headings
-- **Sparkle Background** - Subtle magical particle effects
-- **Hover Effects** - Interactive card and button animations
-
-### Accessibility Features
-- **Semantic HTML** - Proper heading hierarchy and landmarks
-- **ARIA Labels** - Screen reader support for interactive elements
-- **Keyboard Navigation** - Full keyboard accessibility
-- **Color Contrast** - WCAG compliant color combinations
-- **Focus Indicators** - Clear focus states for navigation
-
-## 🚀 Performance Optimizations
-
-- **CSS Variables** - Consistent theming and easy customization
-- **Efficient Selectors** - Optimized CSS for fast rendering
-- **Lazy Loading** - Images load as they enter viewport
-- **Throttled Events** - Optimized scroll and resize handlers
-- **Minimal JavaScript** - Lightweight interactions without frameworks
-
 ## 🎨 Customization
 
 ### Color Scheme
@@ -183,7 +153,7 @@ Adjust responsive breakpoints:
 - **Inspiration**: Cassell College universe and fantasy academy aesthetics
 
 
-## 📞 Support
+## 📞 Support (demo purpose,do not take seriosly)
 
 For questions, feedback, or technical issues:
 - **Email**: contact@dragonraja-community.example

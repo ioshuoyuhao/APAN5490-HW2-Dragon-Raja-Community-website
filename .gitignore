@@ -51,3 +51,10 @@ tmp/
 temp/
 *.tmp
 
+# Cursor IDE
+.cursor/
+.cursorindexingignore
+.cursorignore
+
+# Specstory
+.specstory/

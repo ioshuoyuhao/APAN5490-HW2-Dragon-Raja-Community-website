@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum - Role Play Zone | Night Watcher Forum</title>
+    <meta name="description" content="Join the role-play discussions in Cassell College departments and connect with fellow agents">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    守夜人论坛
+                </div>
+                <nav>
+                    <ul class="nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="forum.html" class="active">Forum</a></li>
+                        <li><a href="fanworks.html">Fan Works</a></li>
+                        <li><a href="contact.html">Departments</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions" id="headerActions">
+                    <span class="notification-icon" aria-label="Notifications">🔔</span>
+                    <a href="login.html" class="btn btn-outline">Login</a>
+                    <a href="questionnaire.html" class="btn btn-primary">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <section class="section">
+                <div class="grid-2" style="gap: 3rem;">
+                    <!-- Sidebar -->
+                    <aside class="sidebar">
+                        <h3>Core Departments</h3>
+                        <ul class="department-list">
+                            <li class="department-item">
+                                <div class="department-name">All Departments</div>
+                                <div class="department-meta">1,247 members • Last update: 2h ago</div>
+                                <button class="btn btn-primary btn-small">Join All</button>
+                            </li>
+                            
+                            <li class="department-item" data-department="Student Council">
+                                <div class="department-name">📋 Student Council</div>
+                                <div class="department-meta">
+                                    <span class="member-count">Loading...</span> members
+                                </div>
+                                <button class="btn btn-outline btn-small join-dept-btn" data-dept="Student Council">Join Council</button>
+                            </li>
+                            
+                            <li class="department-item" data-department="Lionheart Society">
+                                <div class="department-name">🦁 Lionheart Society</div>
+                                <div class="department-meta">
+                                    <span class="member-count">Loading...</span> members
+                                </div>
+                                <button class="btn btn-outline btn-small join-dept-btn" data-dept="Lionheart Society">Join Society</button>
+                            </li>
+                            
+                            <li class="department-item" data-department="Execution Department">
+                                <div class="department-name">⚔️ Execution Department</div>
+                                <div class="department-meta">
+                                    <span class="member-count">Loading...</span> members
+                                </div>
+                                <button class="btn btn-outline btn-small join-dept-btn" data-dept="Execution Department">Join Execution</button>
+                            </li>
+                            
+                            <li class="department-item" data-department="News Club">
+                                <div class="department-name">📰 News Club</div>
+                                <div class="department-meta">
+                                    <span class="member-count">Loading...</span> members
+                                </div>
+                                <button class="btn btn-outline btn-small join-dept-btn" data-dept="News Club">Join News</button>
+                            </li>
+                            
+                            <li class="department-item" data-department="Equipment Division">
+                                <div class="department-name">🔧 Equipment Division</div>
+                                <div class="department-meta">
+                                    <span class="member-count">Loading...</span> members
+                                </div>
+                                <button class="btn btn-outline btn-small join-dept-btn" data-dept="Equipment Division">Join Equipment</button>
+                            </li>
+                        </ul>
+                        
+                        <!-- User Affiliation Status -->
+                        <div id="userAffiliationStatus" style="display: none; margin-top: 1rem; padding: 1rem; background: #f8f8f2; border-radius: 8px;">
+                            <p style="margin: 0; color: #1C3D35; font-weight: 600;">
+                                <span id="affiliationText">Not affiliated with any department</span>
+                            </p>
+                        </div>
+                        
+                        <div class="divider"></div>
+                        
+                        <h3>Quick Actions</h3>
+                        <div class="flex-column">
+                            <a href="forumDiscussion.html#new-thread" class="btn btn-primary">Start New Thread</a>
+                            <a href="forumDiscussion.html#my-posts" class="btn btn-outline">View My Posts</a>
+                            <a href="forumDiscussion.html#bookmarks" class="btn btn-outline">Bookmarked</a>
+                        </div>
+                    </aside>
+
+                    <!-- Main Forum Content -->
+                    <div class="main-content">
+                        <div class="card">
+                            <div class="card-header">
+                                <h2>Forum Discussions</h2>
+                                <div class="filter-bar">
+                                    <button class="filter-btn active" data-sort="recent">Recent</button>
+                                    <button class="filter-btn" data-sort="author">Character</button>
+                                </div>
+                            </div>
+                            
+                            <div class="card-content" id="forumPostsContainer">
+                                <p style="text-align: center; color: #666;">Loading forum posts...</p>
+                                <!-- Thread 1 -->
+                                <article class="thread-item">
+                                    <h3 class="thread-title">Welcome to Cassell College!</h3>
+                                    <div class="thread-meta">
+                                        <span>By: Principal Anjou</span>
+                                        <span>Department: Student Council</span>
+                                        <span>💬 45 replies</span>
+                                        <span>2 hours ago</span>
+                                    </div>
+                                    <p>Welcome, new agents! Cassell College is ready to guide you through your journey of discovery. Remember, every ordinary heart contains the courage of dragons...</p>
+                                    <div class="flex-row" style="margin-top: 1rem;">
+                                        <span class="btn btn-outline btn-small">Reply</span>
+                                        <span class="btn btn-outline btn-small">Bookmark</span>
+                                        <span class="btn btn-outline btn-small">Share</span>
+                                    </div>
+                                </article>
+
+                                <!-- Thread 2 -->
+                                <article class="thread-item">
+                                    <h3 class="thread-title">Dragon Sighting Reports - Multiple Regions</h3>
+                                    <div class="thread-meta">
+                                        <span>By: Field Agent</span>
+                                        <span>Department: Execution Department</span>
+                                        <span>💬 67 replies</span>
+                                        <span>8 hours ago</span>
+                                    </div>
+                                    <p>We've received multiple confirmed dragon sightings across different regions. All agents are advised to report any unusual activity and maintain operational security...</p>
+                                    <div class="flex-row" style="margin-top: 1rem;">
+                                        <span class="btn btn-outline btn-small">Reply</span>
+                                        <span class="btn btn-outline btn-small">Bookmark</span>
+                                        <span class="btn btn-outline btn-small">Share</span>
+                                    </div>
+                                </article>
+
+                                <!-- Thread 3 -->
+                                <article class="thread-item">
+                                    <h3 class="thread-title">Lionheart Society Training Schedule</h3>
+                                    <div class="thread-meta">
+                                        <span>By: Lionheart Leader</span>
+                                        <span>Department: Lionheart Society</span>
+                                        <span>💬 23 replies</span>
+                                        <span>1 day ago</span>
+                                    </div>
+                                    <p>Advanced combat training sessions will begin next week. All Lionheart members are required to attend. New techniques for dragon blood enhancement will be demonstrated...</p>
+                                    <div class="flex-row" style="margin-top: 1rem;">
+                                        <span class="btn btn-outline btn-small">Reply</span>
+                                        <span class="btn btn-outline btn-small">Bookmark</span>
+                                        <span class="btn btn-outline btn-small">Share</span>
+                                    </div>
+                                </article>
+
+                                <!-- Thread 4 -->
+                                <article class="thread-item">
+                                    <h3 class="thread-title">Equipment Division: New Technology Updates</h3>
+                                    <div class="thread-meta">
+                                        <span>By: Tech Specialist</span>
+                                        <span>Department: Equipment Division</span>
+                                        <span>💬 34 replies</span>
+                                        <span>1 day ago</span>
+                                    </div>
+                                    <p>Latest technological advancements in dragon detection equipment are now available. All field agents will receive updated gear in the coming weeks...</p>
+                                    <div class="flex-row" style="margin-top: 1rem;">
+                                        <span class="btn btn-outline btn-small">Reply</span>
+                                        <span class="btn btn-outline btn-small">Bookmark</span>
+                                        <span class="btn btn-outline btn-small">Share</span>
+                                    </div>
+                                </article>
+
+                                <!-- Thread 5 -->
+                                <article class="thread-item">
+                                    <h3 class="thread-title">News Club: Campus Events This Week</h3>
+                                    <div class="thread-meta">
+                                        <span>By: News Reporter</span>
+                                        <span>Department: News Club</span>
+                                        <span>💬 12 replies</span>
+                                        <span>2 days ago</span>
+                                    </div>
+                                    <p>Don't miss the upcoming campus events! Dragon blood research symposium, combat demonstrations, and the annual Cassell College talent show...</p>
+                                    <div class="flex-row" style="margin-top: 1rem;">
+                                        <span class="btn btn-outline btn-small">Reply</span>
+                                        <span class="btn btn-outline btn-small">Bookmark</span>
+                                        <span class="btn btn-outline btn-small">Share</span>
+                                    </div>
+                                </article>
+
+                                <!-- Thread 6 -->
+                                <article class="thread-item">
+                                    <h3 class="thread-title">Character Discussion: Caesar's Leadership Style</h3>
+                                    <div class="thread-meta">
+                                        <span>By: Student Council Member</span>
+                                        <span>Department: Student Council</span>
+                                        <span>💬 89 replies</span>
+                                        <span>3 days ago</span>
+                                    </div>
+                                    <p>Let's discuss Caesar's unique approach to leadership and how it influences the Student Council's decisions. What makes his style effective in crisis situations?</p>
+                                    <div class="flex-row" style="margin-top: 1rem;">
+                                        <span class="btn btn-outline btn-small">Reply</span>
+                                        <span class="btn btn-outline btn-small">Bookmark</span>
+                                        <span class="btn btn-outline btn-small">Share</span>
+                                    </div>
+                                </article>
+
+                                <!-- Thread 7 -->
+                                <article class="thread-item">
+                                    <h3 class="thread-title">Storyline Analysis: The Dragon King's Return</h3>
+                                    <div class="thread-meta">
+                                        <span>By: Literature Professor</span>
+                                        <span>Department: All Departments</span>
+                                        <span>💬 156 replies</span>
+                                        <span>4 days ago</span>
+                                    </div>
+                                    <p>An in-depth analysis of the recent storyline developments and their implications for the Cassell College universe. Theories and predictions welcome...</p>
+                                    <div class="flex-row" style="margin-top: 1rem;">
+                                        <span class="btn btn-outline btn-small">Reply</span>
+                                        <span class="btn btn-outline btn-small">Bookmark</span>
+                                        <span class="btn btn-outline btn-small">Share</span>
+                                    </div>
+                                </article>
+
+                                <!-- Thread 8 -->
+                                <article class="thread-item">
+                                    <h3 class="thread-title">Episode Discussion: The Awakening</h3>
+                                    <div class="thread-meta">
+                                        <span>By: Episode Reviewer</span>
+                                        <span>Department: News Club</span>
+                                        <span>💬 78 replies</span>
+                                        <span>5 days ago</span>
+                                    </div>
+                                    <p>Breaking down the latest episode's key moments, character development, and plot twists. What did you think of the dragon blood awakening sequence?</p>
+                                    <div class="flex-row" style="margin-top: 1rem;">
+                                        <span class="btn btn-outline btn-small">Reply</span>
+                                        <span class="btn btn-outline btn-small">Bookmark</span>
+                                        <span class="btn btn-outline btn-small">Share</span>
+                                    </div>
+                                </article>
+                            </div>
+                            
+                            <!-- Pagination is dynamically rendered by auth.js -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Sponsors</h4>
+                    <p>Dragon Blood Research Foundation</p>
+                    <p>Cassell Academy Alumni Association</p>
+                    <p>Night Watcher Equipment Co.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Community</h4>
+                    <p><a href="forum.html">Discussion Forums</a></p>
+                    <p><a href="fanworks.html">Fan Works Gallery</a></p>
+                    <p><a href="contact.html">Contact Us</a></p>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <p><a href="questionnaire.html">Lineage Investigation</a></p>
+                    <p><a href="#">Department Guides</a></p>
+                    <p><a href="#">Academic Papers</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="copyright-year">2025</span> Night Watcher Forum. All rights reserved.</p>
+                <p>Inspired by Dragon Raja universe. This is a fan community project.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js?v=3"></script>
+    <script src="auth.js?v=3"></script>
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agent Profile | Night Watcher Forum</title>
+    <meta name="description" content="View your Cassell College agent profile and blood rank">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    守夜人论坛
+                </div>
+                <nav>
+                    <ul class="nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="forum.html">Forum</a></li>
+                        <li><a href="fanworks.html">Fan Works</a></li>
+                        <li><a href="contact.html">Departments</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions" id="headerActions">
+                    <span class="notification-icon" aria-label="Notifications">🔔</span>
+                    <a href="login.html" class="btn btn-outline">Login</a>
+                    <a href="questionnaire.html" class="btn btn-primary">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Profile Hero -->
+    <section class="hero" style="padding: 3rem 0; background: linear-gradient(135deg, #1C3D35 0%, #2A5548 100%);">
+        <div class="container">
+            <div class="hero-content text-center">
+                <h1 id="profileName" style="color: #D4AF37; font-size: 2.5rem; margin-bottom: 0.5rem;">
+                    Agent [Loading...]
+                </h1>
+                <div id="bloodRankBadge" style="display: inline-block; padding: 0.75rem 2rem; background: rgba(212, 175, 55, 0.2); border: 2px solid #D4AF37; border-radius: 8px; margin-top: 1rem;">
+                    <span id="rankDisplay" style="font-size: 2rem; font-weight: bold; color: #D4AF37;">
+                        S-Rank 👑
+                    </span>
+                </div>
+                <p id="rankDescription" style="color: #F8F8F2; margin-top: 1rem; font-size: 1.1rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    Loading your profile...
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <!-- Profile Stats -->
+            <section class="section">
+                <div class="grid-3">
+                    <!-- Personal Information -->
+                    <div class="card">
+                        <h3 style="color: #1C3D35; margin-bottom: 1.5rem;">📋 Personal Information</h3>
+                        <div class="profile-info">
+                            <div class="info-row">
+                                <span class="info-label">Name:</span>
+                                <span class="info-value" id="displayName">Loading...</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Email:</span>
+                                <span class="info-value" id="displayEmail">Loading...</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Blood Rank:</span>
+                                <span class="info-value" id="displayRank">Loading...</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Rank Score:</span>
+                                <span class="info-value" id="displayScore">Loading...</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Department Affiliation -->
+                    <div class="card">
+                        <h3 style="color: #1C3D35; margin-bottom: 1.5rem;">⚔️ Department Affiliation</h3>
+                        <div id="departmentSection">
+                            <div id="affiliatedDept">
+                                <p style="color: #666; margin-bottom: 1rem;">Loading department information...</p>
+                            </div>
+                            <div id="joinDeptSection" style="display: none;">
+                                <p style="color: #666; margin-bottom: 1rem;">You haven't joined a department yet. Visit the Forum to choose your path!</p>
+                                <a href="forum.html" class="btn btn-primary">
+                                    Visit Forum
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Performance Breakdown -->
+                    <div class="card">
+                        <h3 style="color: #1C3D35; margin-bottom: 1.5rem;">📊 Performance Breakdown</h3>
+                        <div id="breakdownSection">
+                            <div class="info-row">
+                                <span class="info-label">Multiple Choice:</span>
+                                <span class="info-value" id="mcScore">--/60</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Text Analysis:</span>
+                                <span class="info-value" id="textScore">--/40</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Avg Word Count:</span>
+                                <span class="info-value" id="avgWords">-- words</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Total Words:</span>
+                                <span class="info-value" id="totalWords">-- words</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Account Details -->
+            <section class="section">
+                <div class="card" style="max-width: 800px; margin: 0 auto;">
+                    <h3 style="color: #1C3D35; margin-bottom: 1.5rem;">🎓 Agent Timeline</h3>
+                    <div class="grid-2">
+                        <div class="info-row">
+                            <span class="info-label">Registered:</span>
+                            <span class="info-value" id="createdAt">Loading...</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Last Active:</span>
+                            <span class="info-value" id="lastLogin">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Rank Information -->
+            <section class="section">
+                <div class="card" style="max-width: 800px; margin: 0 auto; background: linear-gradient(135deg, #1C3D35 0%, #2A5548 100%); color: #F8F8F2;">
+                    <h3 style="color: #D4AF37; margin-bottom: 1.5rem;">🐉 Understanding Blood Ranks</h3>
+                    <div class="grid-2" style="gap: 1.5rem;">
+                        <div>
+                            <h4 style="color: #D4AF37;">S-Rank (90-100)</h4>
+                            <p style="color: #F8F8F2;">Supreme Dragon Blood - Elite among elites. Exceptional purity.</p>
+                        </div>
+                        <div>
+                            <h4 style="color: #C0C0C0;">A-Rank (80-89)</h4>
+                            <p style="color: #F8F8F2;">Superior Dragon Blood - Outstanding potential and abilities.</p>
+                        </div>
+                        <div>
+                            <h4 style="color: #FFB84D;">B-Rank (70-79)</h4>
+                            <p style="color: #F8F8F2;">Above Average - Strong capabilities and commendable lineage.</p>
+                        </div>
+                        <div>
+                            <h4 style="color: #87CEEB;">C-Rank (60-69)</h4>
+                            <p style="color: #F8F8F2;">Competent - Solid foundation with good growth potential.</p>
+                        </div>
+                        <div>
+                            <h4 style="color: #90EE90;">D-Rank (50-59)</h4>
+                            <p style="color: #F8F8F2;">Developing - Awakening stage, training enhances abilities.</p>
+                        </div>
+                        <div>
+                            <h4 style="color: #D3D3D3;">F-Rank (0-49)</h4>
+                            <p style="color: #F8F8F2;">Dormant - Latent potential requiring awakening.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Bookmarked Posts -->
+            <section class="section">
+                <div class="card" style="max-width: 800px; margin: 0 auto;">
+                    <h3 style="color: #1C3D35; margin-bottom: 1.5rem;">🔖 Bookmarked Posts</h3>
+                    <div id="bookmarkedPostsContainer">
+                        <p style="color: #666; text-align: center;">Loading bookmarked posts...</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Actions -->
+            <section class="section">
+                <div class="text-center">
+                    <a href="forum.html" class="btn btn-primary" style="margin-right: 1rem;">
+                        Visit Forum
+                    </a>
+                    <a href="fanworks.html" class="btn btn-outline" style="margin-right: 1rem;">
+                        View Fan Works
+                    </a>
+                    <button id="logoutBtn" class="btn btn-outline" style="background: #8B0000; border-color: #8B0000; color: white;">
+                        Logout
+                    </button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About Night Watcher Forum</h4>
+                    <p>A Dragon Raja fan community inspired by Cassell College. Join us to discuss dragon lore, share fan works, and connect with fellow agents.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="forum.html">Forum</a></li>
+                        <li><a href="fanworks.html">Fan Works</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="questionnaire.html">Join Us</a></li>
+                        <li><a href="#">Community Guidelines</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="copyright-year">2025</span> Night Watcher Forum. Built with ❤️ for the Dragon Raja fan community.</p>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        .profile-info .info-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .profile-info .info-row:last-child {
+            border-bottom: none;
+        }
+        
+        .info-label {
+            font-weight: 600;
+            color: #1C3D35;
+        }
+        
+        .info-value {
+            color: #666;
+        }
+    </style>
+
+    <script src="script.js?v=3"></script>
+    <script src="auth.js?v=3"></script>
+</body>
+</html>
+

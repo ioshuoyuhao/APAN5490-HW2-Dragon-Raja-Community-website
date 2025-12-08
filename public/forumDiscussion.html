@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum Management | Night Watcher Forum</title>
+    <meta name="description" content="Manage your forum threads and bookmarks at Cassell College">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    守夜人论坛
+                </div>
+                <nav>
+                    <ul class="nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="forum.html" class="active">Forum</a></li>
+                        <li><a href="fanworks.html">Fan Works</a></li>
+                        <li><a href="contact.html">Departments</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions" id="headerActions">
+                    <span class="notification-icon" aria-label="Notifications">🔔</span>
+                    <a href="login.html" class="btn btn-outline">Login</a>
+                    <a href="questionnaire.html" class="btn btn-primary">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" style="padding: 2rem 0;">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Forum Management</h1>
+                <p>Create threads, view your posts, and manage bookmarks</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <!-- Navigation Tabs -->
+            <section class="section">
+                <div class="card">
+                    <div class="flex-row" style="gap: 1rem; border-bottom: 2px solid #e0e0e0; padding-bottom: 1rem;">
+                        <button class="tab-btn active" data-tab="new-thread">📝 Start New Thread</button>
+                        <button class="tab-btn" data-tab="my-posts">📋 My Posts</button>
+                        <button class="tab-btn" data-tab="bookmarks">🔖 My Bookmarks</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tab Content: Start New Thread -->
+            <section class="tab-content" id="tab-new-thread">
+                <div class="card" style="max-width: 800px; margin: 0 auto;">
+                    <h2>Start New Discussion Thread</h2>
+                    <p style="color: #666; margin-bottom: 2rem;">Share your thoughts and start a conversation with the community</p>
+                    
+                    <form id="newThreadForm">
+                        <div class="form-group">
+                            <label for="threadTitle" class="form-label">Thread Title *</label>
+                            <input type="text" id="threadTitle" name="title" class="form-input" 
+                                   placeholder="Enter a descriptive title..." required maxlength="200">
+                            <small class="form-text">Maximum 200 characters</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="threadContent" class="form-label">Content *</label>
+                            <textarea id="threadContent" name="content" class="form-textarea" rows="10" 
+                                      placeholder="Share your thoughts, questions, or ideas..." required></textarea>
+                            <small class="form-text">Maximum 2000 words. Current: <span id="wordCount">0</span> words</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Department</label>
+                            <input type="text" id="userDepartment" class="form-input" readonly 
+                                   placeholder="Loading..." style="background: #f8f8f2;">
+                            <small class="form-text">Your affiliated department (automatically filled)</small>
+                        </div>
+
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary" style="padding: 1rem 3rem;">
+                                Post Thread
+                            </button>
+                            <a href="forum.html" class="btn btn-outline" style="padding: 1rem 3rem; margin-left: 1rem;">
+                                Cancel
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Tab Content: My Posts -->
+            <section class="tab-content" id="tab-my-posts" style="display: none;">
+                <div class="card">
+                    <h2>My Forum Posts</h2>
+                    <p style="color: #666; margin-bottom: 2rem;">All threads you've created</p>
+                    
+                    <div id="myPostsContainer">
+                        <p style="text-align: center; color: #666;">Loading your posts...</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tab Content: My Bookmarks -->
+            <section class="tab-content" id="tab-bookmarks" style="display: none;">
+                <div class="card">
+                    <h2>Bookmarked Posts</h2>
+                    <p style="color: #666; margin-bottom: 2rem;">Posts you've saved for later</p>
+                    
+                    <div id="myBookmarksContainer">
+                        <p style="text-align: center; color: #666;">Loading your bookmarks...</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About Night Watcher Forum</h4>
+                    <p>A Dragon Raja fan community inspired by Cassell College. Join us to discuss dragon lore, share fan works, and connect with fellow agents.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="forum.html">Forum</a></li>
+                        <li><a href="fanworks.html">Fan Works</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="questionnaire.html">Join Us</a></li>
+                        <li><a href="#">Community Guidelines</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="copyright-year">2025</span> Night Watcher Forum. Built with ❤️ for the Dragon Raja fan community.</p>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        .tab-btn {
+            background: none;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            cursor: pointer;
+            color: #666;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .tab-btn:hover {
+            color: #1C3D35;
+        }
+        
+        .tab-btn.active {
+            color: #1C3D35;
+            border-bottom-color: #D4AF37;
+            font-weight: 600;
+        }
+        
+        .tab-content {
+            margin-top: 2rem;
+        }
+    </style>
+
+    <script src="script.js?v=3"></script>
+    <script src="auth.js?v=3"></script>
+    <script>
+        // Forum Discussion Page specific logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const user = getCurrentUser();
+            
+            if (!user) {
+                showNotification('Please log in to manage forum content', 'error');
+                setTimeout(() => window.location.href = 'login.html', 2000);
+                return;
+            }
+            
+            // Load user department
+            document.getElementById('userDepartment').value = user.affiliatedDepartment || 'Student Council';
+            
+            // Tab switching
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const tabName = this.getAttribute('data-tab');
+                    
+                    // Update active tab
+                    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Show corresponding content
+                    document.querySelectorAll('.tab-content').forEach(content => {
+                        content.style.display = 'none';
+                    });
+                    document.getElementById(`tab-${tabName}`).style.display = 'block';
+                    
+                    // Load content if needed
+                    if (tabName === 'my-posts') {
+                        loadMyPosts();
+                    } else if (tabName === 'bookmarks') {
+                        loadMyBookmarksPage();
+                    }
+                });
+            });
+            
+            // Word count tracker
+            const contentTextarea = document.getElementById('threadContent');
+            if (contentTextarea) {
+                contentTextarea.addEventListener('input', function() {
+                    const words = this.value.trim().split(/\s+/).filter(w => w.length > 0);
+                    document.getElementById('wordCount').textContent = words.length;
+                    
+                    if (words.length > 2000) {
+                        this.style.borderColor = '#dc3545';
+                        document.getElementById('wordCount').style.color = '#dc3545';
+                    } else {
+                        this.style.borderColor = '';
+                        document.getElementById('wordCount').style.color = '';
+                    }
+                });
+            }
+            
+            // New thread form submission
+            const newThreadForm = document.getElementById('newThreadForm');
+            if (newThreadForm) {
+                newThreadForm.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    
+                    const title = document.getElementById('threadTitle').value.trim();
+                    const content = document.getElementById('threadContent').value.trim();
+                    const wordCount = content.split(/\s+/).filter(w => w.length > 0).length;
+                    
+                    if (wordCount > 2000) {
+                        showNotification('Content exceeds 2000 words limit', 'error');
+                        return;
+                    }
+                    
+                    const submitBtn = this.querySelector('button[type="submit"]');
+                    const originalText = submitBtn.textContent;
+                    submitBtn.textContent = 'Creating Thread...';
+                    submitBtn.disabled = true;
+                    
+                    try {
+                        const response = await fetch(`${API_BASE_URL}/forum/create`, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ title, content, userId: user.id })
+                        });
+                        
+                        const data = await response.json();
+                        
+                        if (data.success) {
+                            showNotification('Thread created successfully!', 'success');
+                            this.reset();
+                            document.getElementById('wordCount').textContent = '0';
+                            
+                            setTimeout(() => {
+                                window.location.href = 'forum.html';
+                            }, 2000);
+                        } else {
+                            showNotification(data.error || 'Failed to create thread', 'error');
+                            submitBtn.textContent = originalText;
+                            submitBtn.disabled = false;
+                        }
+                    } catch (error) {
+                        console.error('Thread creation error:', error);
+                        showNotification('Failed to create thread', 'error');
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
+                    }
+                });
+            }
+            
+            // Handle hash navigation
+            const hash = window.location.hash.substring(1);
+            if (hash === 'my-posts') {
+                document.querySelector('[data-tab="my-posts"]').click();
+            } else if (hash === 'bookmarks') {
+                document.querySelector('[data-tab="bookmarks"]').click();
+            }
+        });
+        
+        /**
+         * Load user's forum posts
+         */
+        async function loadMyPosts() {
+            const user = getCurrentUser();
+            if (!user) return;
+            
+            try {
+                const response = await fetch(`${API_BASE_URL}/forum/posts/user/${user.id}`);
+                const data = await response.json();
+                
+                const container = document.getElementById('myPostsContainer');
+                
+                if (data.success && data.data.length > 0) {
+                    container.innerHTML = '';
+                    
+                    data.data.forEach(post => {
+                        const postHTML = `
+                            <div class="thread-item" style="margin-bottom: 1.5rem; padding: 1.5rem; border: 1px solid #e0e0e0; border-radius: 8px;">
+                                <h3 style="color: #1C3D35; margin-bottom: 0.75rem;">${escapeHTML(post.title)}</h3>
+                                <div class="thread-meta" style="margin-bottom: 1rem;">
+                                    <span>Department: ${escapeHTML(post.department)}</span>
+                                    <span>•</span>
+                                    <span>💬 ${post.replies} replies</span>
+                                    <span>•</span>
+                                    <span>👁️ ${post.views} views</span>
+                                    <span>•</span>
+                                    <span>${formatTimestamp(post.createdAt)}</span>
+                                </div>
+                                <p style="color: #666;">${escapeHTML(post.content.substring(0, 200))}${post.content.length > 200 ? '...' : ''}</p>
+                                <a href="forum.html" class="btn btn-outline btn-small" style="margin-top: 1rem;">View in Forum</a>
+                            </div>
+                        `;
+                        container.insertAdjacentHTML('beforeend', postHTML);
+                    });
+                } else {
+                    container.innerHTML = '<p style="text-align: center; color: #666;">You haven\'t created any posts yet. <a href="#new">Start a new thread!</a></p>';
+                }
+            } catch (error) {
+                console.error('Error loading user posts:', error);
+            }
+        }
+        
+        /**
+         * Load user's bookmarked posts
+         */
+        async function loadMyBookmarksPage() {
+            const user = getCurrentUser();
+            if (!user) return;
+            
+            try {
+                const response = await fetch(`${API_BASE_URL}/forum/bookmarks/${user.id}`);
+                const data = await response.json();
+                
+                const container = document.getElementById('myBookmarksContainer');
+                
+                if (data.success && data.data.length > 0) {
+                    container.innerHTML = '';
+                    
+                    data.data.forEach(post => {
+                        const postHTML = `
+                            <div class="thread-item" style="margin-bottom: 1.5rem; padding: 1.5rem; border: 1px solid #e0e0e0; border-radius: 8px;">
+                                <h3 style="color: #1C3D35; margin-bottom: 0.75rem;">${escapeHTML(post.title)}</h3>
+                                <div class="thread-meta" style="margin-bottom: 1rem;">
+                                    <span>By: ${escapeHTML(post.author)}</span>
+                                    <span>•</span>
+                                    <span>Department: ${escapeHTML(post.department)}</span>
+                                    <span>•</span>
+                                    <span>Bookmarked: ${formatTimestamp(post.bookmarkedAt)}</span>
+                                </div>
+                                <p style="color: #666;">${escapeHTML(post.content.substring(0, 200))}${post.content.length > 200 ? '...' : ''}</p>
+                                <a href="forum.html" class="btn btn-outline btn-small" style="margin-top: 1rem;">View in Forum</a>
+                            </div>
+                        `;
+                        container.insertAdjacentHTML('beforeend', postHTML);
+                    });
+                } else {
+                    container.innerHTML = '<p style="text-align: center; color: #666;">You haven\'t bookmarked any posts yet. Visit the <a href="forum.html">Forum</a> to bookmark posts!</p>';
+                }
+            } catch (error) {
+                console.error('Error loading bookmarks:', error);
+            }
+        }
+    </script>
+</body>
+</html>
+
